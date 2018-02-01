@@ -1,0 +1,44 @@
+@import '../../styles/mixins';
+
+@backgroundColor: #67b1fc;
+
+
+.home-flatbonds {
+border-radius: 4px;
+  width: 800px;
+  thead{
+    tr{
+      background: @backgroundColor;
+    }
+  th{
+    color: white;
+    text-align: left;
+  }
+  }
+
+  tbody{
+    tr{
+      &:nth-child(odd){
+        background: lighten(@backgroundColor, 25%);
+      }
+    }
+  }
+
+  td, th{
+    padding: 6px 8px;
+  }
+
+
+
+}
+
+.action-button{
+  border: none;
+  border-radius: 4px;
+  background: @backgroundColor;
+  padding: 10px;
+  font-size: 14px;
+  margin: 5px;
+  color: white;
+  cursor: pointer;
+}

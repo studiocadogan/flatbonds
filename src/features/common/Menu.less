@@ -1,0 +1,26 @@
+@import '../../styles/mixins';
+
+.common-menu {
+  background: darken(@backgroundColor, 50%);
+position: relative;
+  width: 100px;
+  height: 100vh;
+float:left;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+
+  a{
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    color: white;
+    &:hover {
+      text-decoration: none;
+      border-bottom: none;
+    }
+      position: relative;
+  }
+
+}
