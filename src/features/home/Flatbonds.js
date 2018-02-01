@@ -19,23 +19,24 @@ export class Flatbonds extends Component {
     super();
     this.setFilter = this.setFilter.bind(this);
     this.state = {
-      filter: ''
+      filter: 'address',
+      filterText: ''
     };
   }
   setFilter({ filter }) {
     this.setState({ filter });
   }
 
-  filterBy({ filter }) {
+  filterBy() {
     const { flatBonds } = this.props.home;
 
-    switch (filter) {
-        case 'status' :
-        return [...flatBonds.sort((a, b) => a.status.localeCompare(b.status))];
-        case 'address' :
-        return [...flatBonds.sort((a, b) => a.address > b.address)];
+    switch (this.state.filter) {
+      case 'status' :
+        return [...flatBonds.filter(flatBond => flatBond.status.toLowerCase().indexOf(this.state.filterText) > -1)];
+      case 'address' :
+        return [...flatBonds.filter(flatBond => flatBond.address.toLowerCase().indexOf(this.state.filterText) > -1)];
       default :
-        return flatBonds;
+        return [...flatBonds];
     }
   }
 
@@ -60,7 +61,7 @@ export class Flatbonds extends Component {
       <button className="action-button" onClick={() => !addNewFlatbondPending && addNewFlatbond()}>
         {addNewFlatbondPending ? 'Please wait' : 'Create new Flatbond'}
       </button>
-      <FilterRow filterFunction={this.setFilter} filterState={filter} />
+      <FilterRow setFilterText={({ filterText }) => this.setState({ filterText })} filterFunction={this.setFilter} filterState={filter} />
 
       {!flatBonds ? (!getFlatbondsPending ? <h1>No Flatbonds found</h1> : <Loader />) : <table className="home-flatbonds">
         <thead>
@@ -72,7 +73,7 @@ export class Flatbonds extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.filterBy({ filter }).map((flatBond, index) => this.renderFlatbond({ flatBond, index }))}
+          {this.filterBy().map((flatBond, index) => this.renderFlatbond({ flatBond, index }))}
         </tbody>
       </table>}
     </Fragment>);

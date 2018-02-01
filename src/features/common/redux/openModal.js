@@ -1,20 +1,20 @@
 import {
-  HOME_UPDATE_PROFILE,
+  COMMON_OPEN_MODAL,
 } from './constants';
 
-export function updateProfile(userData) {
+export function openModal(modal) {
   return {
-    type: HOME_UPDATE_PROFILE,
-    userData
+    type: COMMON_OPEN_MODAL,
+    modal
   };
 }
 
 export function reducer(state, action) {
   switch (action.type) {
-    case HOME_UPDATE_PROFILE:
+    case COMMON_OPEN_MODAL:
       return {
         ...state,
-        userData: action.userData
+        modal: action.modal
       };
 
     default:

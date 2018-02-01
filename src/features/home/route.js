@@ -2,6 +2,7 @@ import {
   DefaultPage,
   Flatbonds,
   EditProfile,
+  Performance,
 } from './';
 
 export default {
@@ -14,5 +15,6 @@ export default {
       isIndex: true,
     },
     { path: 'profile', name: 'Edit profile', component: EditProfile },
+    { path: 'performance', name: 'Performance', component: Performance },
   ],
 };

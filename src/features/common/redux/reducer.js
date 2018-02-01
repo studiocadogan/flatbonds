@@ -1,6 +1,10 @@
 import initialState from './initialState';
+import { reducer as openModalReducer } from './openModal';
+import { reducer as closeModalReducer } from './closeModal';
 
 const reducers = [
+  openModalReducer,
+  closeModalReducer,
 ];
 
 export default function reducer(state = initialState, action) {

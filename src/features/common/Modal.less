@@ -1,0 +1,25 @@
+@import '../../styles/mixins';
+
+.common-modal {
+position: fixed;
+  top: 0;
+  left:0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  transition: background .3s ease-in-out;
+  will-change: background;
+
+  .inner{
+    transition: transform .3s ease-in-out;
+    will-change: transform;
+    background: white;
+    border-radius: 4px;
+    padding: 20px;
+
+  }
+}

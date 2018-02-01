@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
+import PopupModal from '../common/Modal';
 
-import Menu from '../common/Menu'
+import Menu from '../common/Menu';
 
 export class App extends Component {
   static propTypes = {
@@ -24,7 +25,8 @@ export class App extends Component {
   render() {
     return (
       <div className="home-app">
-      <Menu/>
+        <PopupModal />
+        <Menu />
         <div className="page-container">
           {this.props.children}
         </div>

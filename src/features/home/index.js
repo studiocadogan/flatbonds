@@ -4,3 +4,4 @@ export { default as Flatbonds } from './Flatbonds';
 export { default as EditProfile } from './EditProfile';
 export { default as Loader } from './Loader';
 export { default as FilterRow } from './FilterRow';
+export { default as Performance } from './Performance';

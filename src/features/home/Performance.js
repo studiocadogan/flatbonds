@@ -4,9 +4,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from './redux/actions';
 
-import Flatbond from './Flatbonds';
-
-export class DefaultPage extends Component {
+export class Performance extends Component {
   static propTypes = {
     home: PropTypes.object.isRequired,
     actions: PropTypes.object.isRequired,
@@ -14,10 +12,7 @@ export class DefaultPage extends Component {
 
   render() {
     return (
-      <div className="home-default-page">
-        <div className="bond-container">
-          <Flatbond />
-        </div>
+      <div className="home-performance">
       </div>
     );
   }
@@ -40,4 +35,4 @@ function mapDispatchToProps(dispatch) {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(DefaultPage);
+)(Performance);
